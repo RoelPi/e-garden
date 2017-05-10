@@ -1,0 +1,38 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>roelpeters.be | Garden</title>
+	<meta name="title" content="roelpeters.be | Garden" />
+	<meta name="description" content="One button, just to water my plants." />
+	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+	<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700,900' rel='stylesheet' type='text/css'>
+	<!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'> -->
+	<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> # Meh@Bootstrap -->
+	
+	<script src="all.js"></script>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body id="bootstrap-overrides">
+	<div id="container">
+		<div id="image-box" class="box">
+			<img src="plant.png" class="icon">
+		</div>
+		<div id="overview-box" class="box bigtext">
+			The last time your plants received water was on <span class="highlight" id="date"></span> around <span class="highlight" id="hour"></span>. That's more than <span class="highlight" id="daycount"></span> ago. The water pump ran for <span class="highlight" id="sec"></span>.
+		</div>
+		<div id="control-panel">
+			<button type="button" class="btn" id="btn">water</button>
+			<div id="help" class="smalltext">
+				Tapping this button will water the plants for <span class="highlight">5 seconds</span>.
+			</div>				
+		</div>
+	</div>
+
+</body>
+
+</html>

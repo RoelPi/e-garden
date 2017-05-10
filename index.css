@@ -1,0 +1,82 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size:16px;
+	font-weight:700;
+	background-image: url("wall.jpg");
+	background-size:cover;
+}
+#container {
+	position:relative;
+	padding-top:50px;
+	margin: 0 auto;
+	max-width: 768px;;
+	background-color: #fff;
+	height: 100%;
+	width:100%;
+	opacity:0.9;
+}
+.icon {
+	margin:0 auto;
+	width:150px;
+	height: auto;
+}
+.box {
+	position:relative;
+	padding:25px;
+	text-align: center;
+	color: #170409;
+}
+.bigtext {
+	font-size: 16px;
+}
+.smalltext {
+	font-size: 10px;
+}
+.highlight {
+	color: #67917A;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+.warning {
+	color: #E33258;
+	text-transform: uppercase;
+}
+
+#control-panel {
+	margin: 0 auto;
+	text-align:center;
+}
+
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  width:150px;
+  border-radius: 36px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: 'Roboto',sans-serif;
+  color: #ffffff;
+  font-size: 36px;
+  background: #2f6627;
+  padding: 20px 20px 20px 20px;
+  border: solid #2f6627 2px;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #39852d;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: 'Roboto',sans-serif;
+  color: #ffffff;
+  font-size: 36px;
+}
+#help {
+	padding: 25px;
+}
+
+@media (min-width: 768px) {
+	.bigtext {
+		font-size: 36px;
+	}
+	.smalltext {
+		font-size: 14px;
+	}
+}
