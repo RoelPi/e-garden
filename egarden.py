@@ -3,7 +3,7 @@ import time
 import json
 import requests
 
-token = 'roelgarden'
+token = 'xxxxxxxxxx'
 url = 'http://www.xx.xx/status.php?token='
 pump = 4
 sensor = 5
