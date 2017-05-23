@@ -30,11 +30,10 @@ function gup(name, url) {
     var results = regex.exec( url );
     return results == null ? null : results[1];
 }
-token = gup('token');
-test = gup('test');
 
 // Function that requests water and appropriately starts timing
-function water(seconds) {
+function water(seconds,token) {
+	test = 0;
 	$("#btn").css({'border': 'solid #8f8f8f 2px','background': '#bfbfbf'});
 	$("#btn").prop("disabled",true);
 	noInterrupt = 1;
@@ -80,13 +79,13 @@ function water(seconds) {
 }
 
 // Run this function once the button has been pushed. Waits for three seconds to request water
-function startTiming(seconds) {
+function startTiming(seconds,token) {
 	if (noInterrupt == 0) {
 		counter += seconds;
 		more = counter + 5;
 		$('#help').html("Tapping this button <u>again</u> will water the plants for <span class='highlight'>"+ more + " seconds</span>.<br>");
 		clearTimeout(w);
-		w = setTimeout(water,3000,counter);
+		w = setTimeout(water,3000,counter,token);
 	}
 }
 
@@ -99,10 +98,38 @@ function getLatest() {
 	});
 }
 
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 $(document).ready(function() {
+	token = getCookie('token');
+	if (token == "") { 
+		token = gup('token');
+		setCookie('token',token,365); 
+	}
 	getLatest();
 	$('#btn').click(function() {
-		startTiming(5);
+		startTiming(5,token);
 	});
 });
 
